@@ -1,0 +1,23 @@
+{% extends 'base/main.html' %}
+{% load static %}
+{% block content %}
+
+    <main>
+
+        <section id="room-name-wrapper">
+            <p>Room Name: <span id="room-name">NEWYEAR</span></p>
+        </section>
+
+        <section id="video-streams">
+            <div class="video-container" id="user-container-1">
+                <div class="username-wrapper">
+                    <span class="user-name">Dylan</span>
+                </div>
+                <div class="video-player" id="user-1"></div>
+            </div>
+        </section>
+
+    </main>
+    <script src="{% static 'assets/AgoraRTC_N-4.10.1.js' %}"></script>
+<script src="{% static 'js/stream.js' %}"></script>
+{% endblock content %}

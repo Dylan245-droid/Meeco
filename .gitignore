@@ -1,0 +1,19 @@
+# __pycache__
+__pycache__/
+
+# Var env
+.env
+
+# migrations file
+**/migrations/00*
+
+# Media files development
+media/
+
+# database
+# db.sqlite3
+
+#static files
+staticfiles/
+
+
