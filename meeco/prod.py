@@ -1,7 +1,7 @@
 from .dev import *
 import dj_database_url
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOST = ["meecomeetings.herokuapp.com"]
 
