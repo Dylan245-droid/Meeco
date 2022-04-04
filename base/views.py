@@ -5,7 +5,7 @@ from django.http import JsonResponse
 from django.shortcuts import render
 from agora_token_builder import RtcTokenBuilder
 from base.models import RoomMember
-from meeco.settings import *
+from meeco.dev import *
 import random
 from django.views.decorators.csrf import csrf_exempt
 
