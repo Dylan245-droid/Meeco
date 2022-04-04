@@ -1,3 +1,4 @@
+from cmath import log
 import json
 import time
 from django.http import JsonResponse
@@ -35,9 +36,29 @@ def createMember(request):
     data = json.loads(request.body)
     
     member, created = RoomMember.objects.get_or_create(
-        name = data['name'],
-        uid = data[' UID'],
+        user = data['name'],
+        uid = data['UID'],
         room_name = data['room_name'],
     )
     
     return JsonResponse({'name': data['name']}, safe=False)
+
+def getMember(request):
+    uid = request.GET.get('UID')
+    room_name = request.GET.get('room_name')
+    
+    member = RoomMember.objects.get(uid=uid, room_name=room_name)
+    
+    return JsonResponse({'name': member.user}, safe=False)
+
+@csrf_exempt
+def deleteMember(request):
+    data = json.loads(request.body)
+    
+    member = RoomMember.objects.filter(
+        user = data['name'],
+        uid = data['UID'],
+        room_name = data['room_name'],
+    )
+    member.delete()
+    return JsonResponse('Member gone of meeting !', safe=False)
