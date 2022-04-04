@@ -3,7 +3,7 @@ import dj_database_url
 
 DEBUG = False
 
-ALLOWED_HOST = []
+ALLOWED_HOST = ["meecomeetings.herokuapp.com"]
 
 TEMPLATE_DEBUG = False
 
