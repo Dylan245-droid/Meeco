@@ -1,4 +1,3 @@
-from cmath import log
 import json
 import time
 from django.http import JsonResponse
