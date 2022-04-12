@@ -32,6 +32,7 @@ def room(request):
 
 @csrf_exempt
 def createMember(request):
+    print(request.body)
     data = json.loads(request.body)
     
     member, created = RoomMember.objects.get_or_create(
